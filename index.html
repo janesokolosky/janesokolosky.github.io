@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Sokolosky - German Studies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+        
+        nav {
+            background: #34495e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        .lang-toggle {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 2rem;
+            transition: background 0.3s;
+        }
+        
+        .lang-toggle:hover {
+            background: #2980b9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .image-placeholder {
+            background: #e0e0e0;
+            border: 2px dashed #999;
+            padding: 3rem;
+            text-align: center;
+            margin: 1rem 0;
+            border-radius: 5px;
+            color: #666;
+        }
+        
+        .content-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .small-image-placeholder {
+            background: #e0e0e0;
+            border: 2px dashed #999;
+            padding: 2rem;
+            text-align: center;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .content-section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-section h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content-section h4 {
+            color: #7f8c8d;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subcategories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .subcat-card {
+            background: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .subcat-card h4 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jane Sokolosky</h1>
+        <p class="en">Teaching Professor of German Studies</p>
+        <p class="de hidden">Lehrprofessorin für Germanistik</p>
+        <p class="en">Brown University</p>
+        <p class="de hidden">Brown University</p>
+        <p class="en">Providence, Rhode Island</p>
+        <p class="de hidden">Providence, Rhode Island</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about" class="en">About Me</a><a href="#about" class="de hidden">Über mich</a></li>
+            <li><a href="#teaching" class="en">My Teaching</a><a href="#teaching" class="de hidden">Meine Lehre</a></li>
+            <li><a href="#scholarship" class="en">My Scholarship</a><a href="#scholarship" class="de hidden">Meine Forschung</a></li>
+            <li><a href="#students" class="en">My Students</a><a href="#students" class="de hidden">Meine Studierenden</a></li>
+            <li><a href="#germany" class="en">Germany</a><a href="#germany" class="de hidden">Deutschland</a></li>
+            <li><a href="#austria" class="en">Austria</a><a href="#austria" class="de hidden">Österreich</a></li>
+            <li><a href="#switzerland" class="en">Switzerland</a><a href="#switzerland" class="de hidden">Schweiz</a></li>
+            <li><a href="#wust" class="en">Wust</a><a href="#wust" class="de hidden">Wust</a></li>
+            <li><a href="#study-abroad" class="en">Study Abroad</a><a href="#study-abroad" class="de hidden">Studium im Ausland</a></li>
+            <li><button class="lang-toggle" onclick="toggleLanguage()">Auf Deutsch</button></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        
+        <section id="about" class="content-section">
+            <h2 class="en">About Me</h2>
+            <h2 class="de hidden">Über mich</h2>
+            <div class="image-placeholder en">
+                <p>📷 Upload your photo here</p>
+            </div>
+            <div class="image-placeholder de hidden">
+                <p>📷 Laden Sie hier Ihr Foto hoch</p>
+            </div>
+            <div class="en">
+                <p>Hi! I'm Frau Sok. I love learning and teaching languages. My favorite place to be in the summer is Berlin and the surrounding countryside. I'm a faculty member in German Studies at Brown University where I coordinate and teach the beginning and intermediate German language sequence, mentor graduate students who are teaching assistants in our department, and advise undergraduates about studying and interning abroad. For this work, I was awarded Brown University's Harriet W. Sheridan Award for Distinguished Contribution to Teaching and Learning.</p>
+                <p>From 2018-2024, I was the Director of Brown's Center for Language Studies (CLS) where I spearheaded new initiatives such as Brown's Certificate in Intercultural Competence, translation conferences, language hours in the SciLi, Open Mic night, World Trivia Night and the hiring of Brown's first full-time instructor in an African language.</p>
+            </div>
+            <div class="de hidden">
+                <p>Hallo! Ich bin Frau Sok. Ich liebe es, Sprachen zu lernen und zu unterrichten. Mein Lieblingsort im Sommer ist Berlin und das umliegende Land. Ich bin Fakultätsmitglied im Fach Germanistik an der Brown University, wo ich die Anfängs- und Mittelstufenkurse koordiniere und unterrichte, Doktoranden betreue, die als Lehrbeauftragte in unserer Abteilung tätig sind, und Studierende über Studien- und Praktikumsmöglichkeiten im Ausland berate. Für diese Arbeit wurde ich mit dem Harriet W. Sheridan Award der Brown University für herausragende Beiträge zur Lehre und zum Lernen ausgezeichnet.</p>
+                <p>Von 2018 bis 2024 war ich Direktorin des Center for Language Studies (CLS) an Brown, wo ich neue Initiativen wie das Zertifikat für interkulturelle Kompetenz, Übersetzungskonferenzen, Sprachstunden in der SciLi, Open-Mic-Abende, World Trivia Night und die Einstellung des ersten hauptamtlichen Dozenten für eine afrikanische Sprache an Brown ins Leben rief.</p>
+            </div>
+        </section>
+        
+        <section id="teaching" class="content-section">
+            <h2 class="en">My Teaching</h2>
+            <h2 class="de hidden">Meine Lehre</h2>
+            <div class="image-placeholder en">
+                <p>📷 Upload a teaching photo here</p>
+            </div>
+            <div class="image-placeholder de hidden">
+                <p>📷 Laden Sie hier ein Foto vom Unterricht hoch</p>
+            </div>
+            <div class="en">
+                <p>Working with students is a miracle! In a Beginning German Course, I see them enter the first day of class not knowing any German but eager to learn the language and to know more about the history and culture and three months later, I watch them presenting in German on topics of their own choosing showcasing their interests in the German-speaking world. The intermediate level is most challenging as students must start to speak in paragraphs with more detail. But this too they can manage! We create a lot of shared content so that students are learning from each other and not just from me. We've created information blogs and creative newspapers and serial novels. When I was at Middlebury, I taught the senior seminar devoted to my dissertation topic on turn-of-the-century Vienna.</p>
+            </div>
+            <div class="de hidden">
+                <p>Mit Studierenden zu arbeiten ist ein Wunder! In einem Anfängerkurs sehe ich sie am ersten Tag ohne jegliche Deutschkenntnisse in den Unterricht kommen, aber voller Lernbegierde für die Sprache sowie die Geschichte und Kultur, und drei Monate später präsentieren sie auf Deutsch zu selbst gewählten Themen und zeigen ihr Interesse an der deutschsprachigen Welt. Die Mittelstufe ist am anspruchsvollsten, da die Studierenden anfangen müssen, in zusammenhängenden Abschnitten mit mehr Details zu sprechen. Aber auch das schaffen sie! Wir erstellen viele gemeinsame Inhalte, sodass die Studierenden voneinander lernen und nicht nur von mir. Wir haben Informationsblogs, kreative Zeitungen und Fortsetzungsromane erstellt. Als ich in Middlebury war, unterrichtete ich das Hauptseminar zu meinem Dissertationsthema über das Wien der Jahrhundertwende.</p>
+            </div>
+        </section>
+        
+        <section id="scholarship" class="content-section">
+            <h2 class="en">My Scholarship</h2>
+            <h2 class="de hidden">Meine Forschung</h2>
+            <div class="image-placeholder en">
+                <p>📷 Upload an image related to your research</p>
+            </div>
+            <div class="image-placeholder de hidden">
+                <p>📷 Laden Sie ein Bild zu Ihrer Forschung hoch</p>
+            </div>
+            <div class="en">
+                <p>My research focuses on language pedagogy, the integration of language learning and intercultural competence, and the application of new technologies in language learning. I regularly present at conferences and have received Brown's Teaching with Technology Award and the Sheridan Award for Teaching and Learning. I am a co-author of the second-year German language textbook, <em>Denk mal!</em> (4th Edition, 2024).</p>
+                <p>One of my wildest memories is presenting at the ACTFL (American Association of Teachers of Foreign Languages) annual conference when iPods were first invented. The room was packed with over 200 participants who were curious about the pilot program at Brown where we were given 10 free songs on these small devices to use in our language courses. It's been an amazing ride as we see language technology evolve over time to include large language models, voice recognition and AI.</p>
+                <p>For more detailed information, please visit my <a href="https://vivo.brown.edu/display/jsokolos" target="_blank">Brown University professional page</a>.</p>
+            </div>
+            <div class="de hidden">
+                <p>Meine Forschung konzentriert sich auf Sprachpädagogik, die Integration von Sprachenlernen und interkultureller Kompetenz sowie die Anwendung neuer Technologien im Sprachunterricht. Ich halte regelmäßig Vorträge auf Konferenzen und habe den Teaching with Technology Award und den Sheridan Award for Teaching and Learning der Brown University erhalten. Ich bin Mitautorin des Deutschlehrbuchs für das zweite Jahr, <em>Denk mal!</em> (4. Auflage, 2024).</p>
+                <p>Eine meiner wildesten Erinnerungen ist ein Vortrag auf der jährlichen ACTFL-Konferenz (American Association of Teachers of Foreign Languages), als iPods gerade erfunden wurden. Der Raum war mit über 200 Teilnehmern gefüllt, die neugierig auf das Pilotprogramm an Brown waren, bei dem wir 10 kostenlose Songs auf diesen kleinen Geräten für unsere Sprachkurse erhielten. Es war eine erstaunliche Reise, zu sehen, wie sich Sprachtechnologie im Laufe der Zeit entwickelt hat, um große Sprachmodelle, Spracherkennung und KI einzuschließen.</p>
+                <p>Für detailliertere Informationen besuchen Sie bitte meine <a href="https://vivo.brown.edu/display/jsokolos" target="_blank">professionelle Seite der Brown University</a>.</p>
+            </div>
+        </section>
+
+<section id="students" class="content-section">
+            <h2 class="en">My Students</h2>
+            <h2 class="de hidden">Meine Studierenden</h2>
+            <div class="image-placeholder en">
+                <p>📷 Upload a photo with students or student activities</p>
+            </div>
+            <div class="image-placeholder de hidden">
+                <p>📷 Laden Sie ein Foto mit Studierenden oder studentischen Aktivitäten hoch</p>
+            </div>
+            <div class="en">
+                <p>Please reach out to me via email with any questions you may have about courses, study abroad, German grammar or to schedule a one-on-one meeting in person or via Zoom.</p>
+                <p><strong>Email:</strong> Jane_Sokolosky@brown.edu<br>
+                <strong>Office:</strong> 190 Hope Street at the corner of Waterman and Hope</p>
+                <p>In my classes, students come prepared to engage in a lively class using the German vocabulary and grammar they have learned and practiced in their homework leading up to class. I have always used this flipped model in my language classes because I've found it gives students something in class that they don't have outside of class: speaking partners using German. We use a lot of pair work and graduate students and undergraduate students are very familiar with my phrase "Plus einen Satz". This is a reminder not to answer with just yes or no or by repeating the content of the question but to give an additional answer, a novel sentence to extend the conversation.</p>
+                <p>My students have graduated from Brown to pursue many careers as engineers, lawyers, advocates, architects and as German professors. Their curiosity about the world and their diligence and focus in learning a new language served them well!</p>
+            </div>
+            <div class="de hidden">
+                <p>Bitte kontaktieren Sie mich per E-Mail, wenn Sie Fragen zu Kursen, Auslandsstudium, deutscher Grammatik haben oder ein persönliches Treffen vor Ort oder per Zoom vereinbaren möchten.</p>
+                <p><strong>E-Mail:</strong> Jane_Sokolosky@brown.edu<br>
+                <strong>Büro:</strong> 190 Hope Street an der Ecke Waterman und Hope</p>
+                <p>In meinen Kursen kommen die Studierenden vorbereitet, um sich mit dem deutschen Wortschatz und der Grammatik, die sie in ihren Hausaufgaben gelernt und geübt haben, lebhaft am Unterricht zu beteiligen. Ich habe dieses „Flipped Classroom"-Modell in meinen Sprachkursen immer verwendet, weil es den Studierenden etwas bietet, was sie außerhalb des Unterrichts nicht haben: Gesprächspartner auf Deutsch. Wir arbeiten viel in Paaren, und Doktoranden wie Studierende kennen meinen Satz „Plus einen Satz" sehr gut. Das ist eine Erinnerung daran, nicht nur mit Ja oder Nein zu antworten oder den Inhalt der Frage zu wiederholen, sondern eine zusätzliche Antwort zu geben, einen neuen Satz, um das Gespräch fortzuführen.</p>
+                <p>Meine Studierenden haben Brown absolviert und verfolgen viele Karrieren als Ingenieure, Anwälte, Fürsprecher, Architekten und als Germanistikprofessoren. Ihre Neugier auf die Welt und ihr Fleiß und ihre Konzentration beim Erlernen einer neuen Sprache haben ihnen gute Dienste geleistet!</p>
+            </div>
+            
+            <div class="subcategories">
+                <div class="subcat-card">
+                    <div class="small-image-placeholder en">
+                        <p>📷 Student image 1</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Studierendenbild 1</p>
+                    </div>
+                </div>
+                <div class="subcat-card">
+                    <div class="small-image-placeholder en">
+                        <p>📷 Student image 2</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Studierendenbild 2</p>
+                    </div>
+                </div>
+                <div class="subcat-card">
+                    <div class="small-image-placeholder en">
+                        <p>📷 Student image 3</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Studierendenbild 3</p>
+                    </div>
+                </div>
+                <div class="subcat-card">
+                    <div class="small-image-placeholder en">
+                        <p>📷 Student image 4</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Studierendenbild 4</p>
+                    </div>
+                </div>
+                <div class="subcat-card">
+                    <div class="small-image-placeholder en">
+                        <p>📷 Student image 5</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Studierendenbild 5</p>
+                    </div>
+                </div>
+                <div class="subcat-card">
+                    <div class="small-image-placeholder en">
+                        <p>📷 Student image 6</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Studierendenbild 6</p>
+                    </div>
+                </div>
+                <div class="subcat-card">
+                    <div class="small-image-placeholder en">
+                        <p>📷 Student image 7</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Studierendenbild 7</p>
+                    </div>
+                </div>
+                <div class="subcat-card">
+                    <div class="small-image-placeholder en">
+                        <p>📷 Student image 8</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Studierendenbild 8</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="germany" class="content-section">
+            <h2 class="en">Germany</h2>
+            <h2 class="de hidden">Deutschland</h2>
+            <div class="image-placeholder en">
+                <p>📷 Upload a photo of Germany</p>
+            </div>
+            <div class="image-placeholder de hidden">
+                <p>📷 Laden Sie ein Foto von Deutschland hoch</p>
+            </div>
+            <p class="en">General information about Germany, its culture, and language.</p>
+            <p class="de hidden">Allgemeine Informationen über Deutschland, seine Kultur und Sprache.</p>
+            
+            <div class="subcategories">
+                <div class="subcat-card">
+                    <h4 class="en">Berlin</h4>
+                    <h4 class="de hidden">Berlin</h4>
+                    <div class="small-image-placeholder en">
+                        <p>📷 Berlin image 1</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Berlin-Bild 1</p>
+                    </div>
+                    <div class="small-image-placeholder en">
+                        <p>📷 Berlin image 2</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Berlin-Bild 2</p>
+                    </div>
+                    <div class="small-image-placeholder en">
+                        <p>📷 Berlin image 3</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Berlin-Bild 3</p>
+                    </div>
+                    <div class="small-image-placeholder en">
+                        <p>📷 Berlin image 4</p>
+                    </div>
+                    <div class="small-image-placeholder de hidden">
+                        <p>📷 Berlin-Bild 4</p>
+                    </div>
+                    <div class="en">
+                        <p>Berlin is my favorite German city! The first time there was with a week funded by DAAD as part of my Hamburg junior year study abroad program with Smith College. Many years later, I returned shortly after the fall of the Berlin Wall to study at the Freie Universität. Nowadays, I return every year and always find a new bookstore or cafè or an interesting exhibit to expand on my knowledge of German culture and trends. I have also had the opportunity to travel to Berlin with undergraduate students. There's something very special about witnessing your students being amazed to see the Brandenburg Gate for the first time or working hard to speak only German in the subway and around town!</p>
+                    </div>
+                    <div class="de hidden">
+                        <p>Berlin ist meine Lieblingsstadt in Deutschland! Das erste Mal war ich dort für eine vom DAAD finanzierte Woche als Teil meines Auslandsstudienprogramms in Hamburg im dritten Jahr mit dem Smith College. Viele Jahre später kehrte ich kurz nach dem Fall der Berliner Mauer zurück, um an der Freien Universität zu studieren. Heutzutage kehre ich jedes Jahr zurück und finde immer eine neue Buchhandlung oder ein Café oder eine interessante Ausstellung, um mein Wissen über deutsche Kultur und Trends zu erweitern. Ich hatte auch die Gelegenheit, mit Studierenden nach Berlin zu reisen. Es ist etwas ganz Besonderes, mitzuerleben, wie die Studierenden erstaunt das Brandenburger Tor zum ersten Mal sehen oder sich bemühen, in der U-Bahn und in der Stadt nur Deutsch zu sprechen!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="austria" class="content-section">
+            <h2 class="en">Austria</h2>
+            <h2 class="de hidden">Österreich</h2>
+            <div class="image-placeholder en">
+                <p>📷 Upload a photo of Austria</p>
+            </div>
+            <div class="image-placeholder de hidden">
+                <p>📷 Laden Sie ein Foto von Österreich hoch</p>
+            </div>
+            <div class="en">
+                <p>Austria was extremely important for my trajectory as a German professor. Right after college, I was awarded an Austrian Fulbright to teach at a teacher's college in the city of <a href="https://www.linztourismus.at/en/leisure" target="_blank">Linz</a>, located on the Danube River and famous for music from the Brucknerhaus to Ars electronica and Philip Glass. Vienna became an important source for my scholarship on fin-de-siècle Vienna and my dissertation on the writer and women's rights advocate Rosa Mayreder.</p>
+            </div>
+            <div class="de hidden">
+                <p>Österreich war äußerst wichtig für meinen Werdegang als Germanistikprofessorin. Direkt nach dem College erhielt ich ein österreichisches Fulbright-Stipendium, um an einer Pädagogischen Hochschule in der Stadt <a href="https://www.linztourismus.at/en/leisure" target="_blank">Linz</a> zu unterrichten, die an der Donau liegt und berühmt ist für Musik vom Brucknerhaus über Ars Electronica bis zu Philip Glass. Wien wurde eine wichtige Quelle für meine Forschung über das Wien der Jahrhundertwende und meine Dissertation über die Schriftstellerin und Frauenrechtlerin Rosa Mayreder.</p>
+            </div>
+        </section>
+        
+        <section id="switzerland" class="content-section">
+            <h2 class="en">Switzerland</h2>
+            <h2 class="de hidden">Schweiz</h2>
+            <div class="image-placeholder en">
+                <p>📷 Upload a photo of Switzerland</p>
+            </div>
+            <div class="image-placeholder de hidden">
+                <p>📷 Laden Sie ein Foto der Schweiz hoch</p>
+            </div>
+            <div class="en">
+                <p>In fourth semester German, students read Friedrich Dürrenmatt's crime novel <em>Der Richter und sein Henker</em>. They love the novel's presentation and discussion of the role that fate plays in our lives. Hopefully, students are also drawn to visit the Swiss city of Bern where the novel takes place.</p>
+            </div>
+            <div class="de hidden">
+                <p>Im vierten Semester Deutsch lesen die Studierenden Friedrich Dürrenmatts Kriminalroman <em>Der Richter und sein Henker</em>. Sie lieben die Darstellung und Diskussion des Romans über die Rolle, die das Schicksal in unserem Leben spielt. Hoffentlich werden die Studierenden auch dazu bewegt, die Schweizer Stadt Bern zu besuchen, wo der Roman stattfindet.</p>
+            </div>
+        </section>
+
+<section id="wust" class="content-section">
+            <h2 class="en">Wust</h2>
+            <h2 class="de hidden">Wust</h2>
+            <img src="Summer23WustStudents.jpg" alt="Wust Summer Students 2023" style="max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0;">
+            <h3 class="en">What's the Wust internship?</h3>
+            <h3 class="de hidden">Was ist das Wust-Praktikum?</h3>
+            <div class="en">
+                <p>Ever since the fall of the Berlin Wall, the Sommerschule Wust for English Language, Literature, Theatre and Music has recruited highly energetic and enthusiastic Brown students as ESL instructors. In any given summer, you'll find anywhere from 4-10 Brown people teaching or visiting there. You'll work with a team of college students from the US and the UK to teach English through classroom instruction and a variety of workshops. You'll live in the charming village of Wust, about an hour west of Berlin, close to the River Elbe in former East Germany.</p>
+                <p>Applications are due at the beginning February. Please email me with any questions or to express your interest.</p>
+            </div>
+            <div class="de hidden">
+                <p>Seit dem Fall der Berliner Mauer rekrutiert die Sommerschule Wust für englische Sprache, Literatur, Theater und Musik hochenergetische und enthusiastische Brown-Studierende als ESL-Dozenten. In jedem Sommer finden Sie dort 4-10 Personen von Brown, die unterrichten oder zu Besuch sind. Sie arbeiten mit einem Team von Studierenden aus den USA und Großbritannien zusammen, um Englisch durch Unterricht im Klassenzimmer und verschiedene Workshops zu vermitteln. Sie leben im charmanten Dorf Wust, etwa eine Stunde westlich von Berlin, nahe der Elbe im ehemaligen Ostdeutschland.</p>
+                <p>Bewerbungen müssen Anfang Februar eingereicht werden. Bitte senden Sie mir eine E-Mail, wenn Sie Fragen haben oder Ihr Interesse bekunden möchten.</p>
+            </div>
+        </section>
+        
+        <section id="study-abroad" class="content-section">
+            <h2 class="en">Study Abroad</h2>
+            <h2 class="de hidden">Studium im Ausland</h2>
+            <div class="image-placeholder en">
+                <p>📷 Upload a photo of study abroad students</p>
+            </div>
+            <div class="image-placeholder de hidden">
+                <p>📷 Laden Sie ein Foto von Studierenden im Ausland hoch</p>
+            </div>
+            <div class="en">
+                <p>Brown students have the opportunity to study abroad in either Berlin or in Freiburg (near the French border). Students must have completed beginning German in order to join either of these programs. Berlin is a cosmopolitan city with a rich history and lively social scene. Students study in Berlin on the <a href="https://www.iesabroad.org/programs/berlin-language-culture-politics" target="_blank">IES Berlin program</a>. Freiburg is a city known for its sustainability, its trees, and its prolific bike culture. Students live in dorms, take courses at the university or at the <a href="https://www.iesabroad.org/programs/freiburg-language-area-studies" target="_blank">IES Freiburg center</a>. Both options are excellent ways to expand your understanding of the world and to improve your German.</p>
+            </div>
+            <div class="de hidden">
+                <p>Brown-Studierende haben die Möglichkeit, entweder in Berlin oder in Freiburg (nahe der französischen Grenze) im Ausland zu studieren. Die Studierenden müssen den Deutschanfängerkurs abgeschlossen haben, um an einem dieser Programme teilnehmen zu können. Berlin ist eine kosmopolitische Stadt mit reicher Geschichte und lebendiger Sozialszene. Die Studierenden studieren in Berlin im Rahmen des <a href="https://www.iesabroad.org/programs/berlin-language-culture-politics" target="_blank">IES Berlin-Programms</a>. Freiburg ist eine Stadt, die für ihre Nachhaltigkeit, ihre Bäume und ihre ausgeprägte Fahrradkultur bekannt ist. Die Studierenden wohnen in Wohnheimen, besuchen Kurse an der Universität oder am <a href="https://www.iesabroad.org/programs/freiburg-language-area-studies" target="_blank">IES Freiburg-Zentrum</a>. Beide Optionen sind ausgezeichnete Möglichkeiten, Ihr Verständnis der Welt zu erweitern und Ihr Deutsch zu verbessern.</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p class="en">&copy; 2026 Jane Sokolosky, PhD | Brown University | Jane_Sokolosky@brown.edu | <a href="https://www.instagram.com/frausok" target="_blank">@frausok</a></p>
+        <p class="de hidden">&copy; 2026 Jane Sokolosky, PhD | Brown University | Jane_Sokolosky@brown.edu | <a href="https://www.instagram.com/frausok" target="_blank">@frausok</a></p>
+    </footer>
+    
+    <script>
+        let isGerman = false;
+        
+        function toggleLanguage() {
+            const button = document.querySelector('.lang-toggle');
+            const enElements = document.querySelectorAll('.en');
+            const deElements = document.querySelectorAll('.de');
+            
+            if (!isGerman) {
+                enElements.forEach(el => el.classList.add('hidden'));
+                deElements.forEach(el => el.classList.remove('hidden'));
+                button.textContent = 'In English';
+                isGerman = true;
+                document.documentElement.lang = 'de';
+            } else {
+                deElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                button.textContent = 'Auf Deutsch';
+                isGerman = false;
+                document.documentElement.lang = 'en';
+            }
+        }
+    </script>
+</body>
+</html>
