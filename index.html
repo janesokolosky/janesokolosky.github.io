@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Sokolosky - German Studies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+        
+        nav {
+            background: #34495e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        .lang-toggle {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 2rem;
+            transition: background 0.3s;
+        }
+        
+        .lang-toggle:hover {
+            background: #2980b9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .image-placeholder {
+            background: #e0e0e0;
+            border: 2px dashed #999;
+            padding: 3rem;
+            text-align: center;
+            margin: 1rem 0;
+            border-radius: 5px;
+            color: #666;
+        }
+        
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .small-image-placeholder {
+            background: #e0e0e0;
+            border: 2px dashed #999;
+            padding: 2rem;
+            text-align: center;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .content-section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-section h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content-section h4 {
+            color: #7f8c8d;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subcategories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .subcat-card {
+            background: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .subcat-card h4 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .edit-note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jane Sokolosky</h1>
+        <p class="en">Teaching Professor of German Studies</p>
+        <p class="de hidden">Lehrprofessorin für Germanistik</p>
+        <p class="en">Brown University</p>
+        <p class="de hidden">Brown University</p>
+        <p class="en">Providence, Rhode Island</p>
+        <p class="de hidden">Providence, Rhode Island</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about" class="en">About Me</a><a href="#about" class="de hidden">Über mich</a></li>
+            <li><a href="#teaching" class="en">My Teaching</a><a href="#teaching" class="de hidden">Meine Lehre</a></li>
+            <li><a href="#scholarship" class="en">My Scholarship</a><a href="#scholarship" class="de hidden">Meine Forschung</a></li>
+            <li><a href="#students" class="en">My Students</a><a href="#students" class="de hidden">Meine Studierenden</a></li>
+            <li><a href="#germany" class="en">Germany</a><a href="#germany" class="de hidden">Deutschland</a></li>
+            <li><a href="#austria" class="en">Austria</a><a href="#austria" class="de hidden">Österreich</a></li>
+            <li><a href="#switzerland" class="en">Switzerland</a><a href="#switzerland" class="de hidden">Schweiz</a></li>
+            <li><a href="#wust" class="en">Wust</a><a href="#wust" class="de hidden">Wust</a></li>
+            <li><a href="#study-abroad" class="en">Study Abroad</a><a href="#study-abroad" class="de hidden">Studium im Ausland</a></li>
+            <li><button class="lang-toggle" onclick="toggleLanguage()">Auf Deutsch</button></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="edit-note en">
+            <strong>To update this website:</strong> Simply find the text between the HTML tags and replace it with your own content. For example, replace "[Your Name]" with your actual name, and the placeholder text in each section with your information.
+        </div>
+        <div class="edit-note de hidden">
+            <strong>Um diese Website zu aktualisieren:</strong> Finden Sie einfach den Text zwischen den HTML-Tags und ersetzen Sie ihn durch Ihre eigenen Inhalte.
+        </div>
+        
+        <section id="about" class="content-section">
+            <h2 class="en">About Me</h2>
+            <h2 class="de hidden">Über mich</h2>
+            <div class="image-placeholder en">
+                <p>📷 Upload your photo here (Replace this entire div with: &lt;img src="your-image.jpg" alt="Jane Sokolosky"&gt;)</p>
+            </div>
+            <div class="image-placeholder de hidden">
+                <p>📷 Laden Sie hier Ihr Foto hoch (Ersetzen Sie diesen gesamten Bereich mit: &lt;img src="ihr-bild.jpg" alt="Jane Sokolosky"&gt;)</p>
+            </div>
+            <div class="en">
+                <p>Hi! I'm Frau Sok. I love learning and teaching languages. My favorite place to be in the summer is Berlin and the surrounding countryside. I'm a faculty member in German Studies at Brown University where I coordinate and teach the beginning and intermediate German language sequence, mentor graduate students who are teaching assistants in our department, and advise undergraduates about studying and interning abroad. For this work, I was awarded Brown University's Harriet W. Sheridan Award for Distinguished Contribution to Teaching and Learning.</p>
+                <p>From 2018-2024, I was the Director of Brown's Center for Language Studies (CLS) where I spearheaded new initiatives such as Brown's Certificate in Intercultural Competence, translation conferences, language hours in the SciLi, Open Mic night, World Trivia Night and the hiring of Brown's first full-time instructor in an African language.</p>
+            </div>
+            <div class="de hidden">
+                <p>Hallo! Ich bin Frau Sok. Ich liebe es, Sprachen zu lernen und zu unterrichten. Mein Lieblingsort im Sommer ist Berlin und das umliegende Land. Ich bin Fakultätsmitglied im Fach Germanistik an der Brown University, wo ich die Anfängs- und Mittelstufenkurse koordiniere und unterrichte, Doktoranden betreue, die als Lehrbeauftragte in unserer Abteilung tätig sind, und Studierende über Studien- und Praktikumsmöglichkeiten im Ausland berate. Für diese Arbeit wurde ich mit dem Harriet W. Sheridan Award der Brown University für herausragende Beiträge zur Lehre und zum Lernen ausgezeichnet.</p>
+                <p>Von 2018 bis 2024 war ich Direktorin des Center for Language Studies (CLS) an Brown, wo ich neue Initiativen wie das Zertifikat für interkulturelle Kompetenz, Übersetzungskonferenzen, Sprachstunden in der SciLi, Open-Mic-Abende, World Trivia Night und die Einstellung des ersten hauptamtlichen Dozenten für eine afrikanische Sprache an Brown ins Leben rief.</p>
+            </div>
+        </section>
+        
+        <section id="teaching" class="content-section">
+            <h2 class="en">My Teaching</h2>
+            <h2 class="de hidden">Meine Lehre</h2>
+            <div class="image-placeholder en">
+                <p>📷 Upload a teaching photo here (classroom, students, etc.)</p>
+            </div>
+            <div class="image-placeholder de hidden">
+                <p>📷 Laden Sie hier ein Foto vom Unterricht hoch (Klassenzimmer, Studierende, etc.)</p>
+            </div>
+            <div class="en">
+                <p>Working with students is a miracle! In a Beginning German Course, I see them enter the first day of class not knowing any German but eager to learn the language and to know more about the history and culture and three months later, I watch them presenting in German on topics of their own choosing showcasing their interests in the German-speaking world. The intermediate level is most challenging as rekrutiert die Sommerschule Wust für englische Sprache, Literatur, Theater und Musik hochenergetische und enthusiastische Brown-Studierende als ESL-Dozenten. In jedem Sommer finden Sie dort 4-10 Personen von Brown, die unterrichten oder zu Besuch sind. Sie arbeiten mit einem Team von Studierenden aus den USA und Großbritannien zusammen, um Englisch durch Unterricht im Klassenzimmer und verschiedene Workshops zu vermitteln. Sie leben im charmanten Dorf Wust, etwa eine Stunde westlich von Berlin, nahe der Elbe im ehemaligen Ostdeutschland.</p>
+<p>Bewerbungen müssen Anfang Februar eingereicht werden. Bitte senden Sie mir eine E-Mail, wenn Sie Fragen haben oder Ihr Interesse bekunden möchten.</p>
+</div>
+</section>
+<section id="study-abroad" class="content-section">
+        <h2 class="en">Study Abroad</h2>
+        <h2 class="de hidden">Studium im Ausland</h2>
+        <div class="image-placeholder en">
+            <p>📷 Upload a photo of study abroad students or international programs</p>
+        </div>
+        <div class="image-placeholder de hidden">
+            <p>📷 Laden Sie ein Foto von Studierenden im Ausland oder internationalen Programmen hoch</p>
+        </div>
+        <div class="en">
+            <p>Brown students have the opportunity to study abroad in either Berlin or in Freiburg (near the French border). Students must have completed beginning German in order to join either of these programs. Berlin is a cosmopolitan city with a rich history and lively social scene. Students study in Berlin on the <a href="https://www.iesabroad.org/programs/berlin-language-culture-politics" target="_blank">IES Berlin program</a>. Freiburg is a city known for its sustainability, its trees, and its prolific bike culture. Students live in dorms, take courses at the university or at the <a href="https://www.iesabroad.org/programs/freiburg-language-area-studies" target="_blank">IES Freiburg center</a>. Both options are excellent ways to expand your understanding of the world and to improve your German.</p>
+        </div>
+        <div class="de hidden">
+            <p>Brown-Studierende haben die Möglichkeit, entweder in Berlin oder in Freiburg (nahe der französischen Grenze) im Ausland zu studieren. Die Studierenden müssen den Deutschanfängerkurs abgeschlossen haben, um an einem dieser Programme teilnehmen zu können. Berlin ist eine kosmopolitische Stadt mit reicher Geschichte und lebendiger Sozialszene. Die Studierenden studieren in Berlin im Rahmen des <a href="https://www.iesabroad.org/programs/berlin-language-culture-politics" target="_blank">IES Berlin-Programms</a>. Freiburg ist eine Stadt, die für ihre Nachhaltigkeit, ihre Bäume und ihre ausgeprägte Fahrradkultur bekannt ist. Die Studierenden wohnen in Wohnheimen, besuchen Kurse an der Universität oder am <a href="https://www.iesabroad.org/programs/freiburg-language-area-studies" target="_blank">IES Freiburg-Zentrum</a>. Beide Optionen sind ausgezeichnete Möglichkeiten, Ihr Verständnis der Welt zu erweitern und Ihr Deutsch zu verbessern.</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p class="en">&copy; 2026 Jane Sokolosky, PhD | Brown University | Jane_Sokolosky@brown.edu | <a href="https://www.instagram.com/frausok" target="_blank" style="color: white; text-decoration: underline;">@frausok</a></p>
+    <p class="de hidden">&copy; 2026 Jane Sokolosky, PhD | Brown University | Jane_Sokolosky@brown.edu | <a href="https://www.instagram.com/frausok" target="_blank" style="color: white; text-decoration: underline;">@frausok</a></p>
+</footer>
+
+<script>
+    let isGerman = false;
+    
+    function toggleLanguage() {
+        const button = document.querySelector('.lang-toggle');
+        const enElements = document.querySelectorAll('.en');
+        const deElements = document.querySelectorAll('.de');
+        
+        if (!isGerman) {
+            // Switch to German
+            enElements.forEach(el => el.classList.add('hidden'));
+            deElements.forEach(el => el.classList.remove('hidden'));
+            button.textContent = 'In English';
+            isGerman = true;
+            document.documentElement.lang = 'de';
+        } else {
+            // Switch to English
+            deElements.forEach(el => el.classList.add('hidden'));
+            enElements.forEach(el => el.classList.remove('hidden'));
+            button.textContent = 'Auf Deutsch';
+            isGerman = false;
+            document.documentElement.lang = 'en';
+        }
+    }
+</script>
+</body>
+</html>
