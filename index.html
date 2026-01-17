@@ -19,10 +19,17 @@
         }
         
         header {
-            background: #2c3e50;
+           background: linear-gradient(135deg, #2c3e50 25%, transparent 25%),
+                        linear-gradient(225deg, #2c3e50 25%, transparent 25%),
+                        linear-gradient(45deg, #2c3e50 25%, transparent 25%),
+                        linear-gradient(315deg, #2c3e50 25%, #34495e 25%);
+            background-position: 10px 0, 10px 0, 0 0, 0 0;
+            background-size: 20px 20px;
+            background-repeat: repeat;
             color: white;
             padding: 2rem 0;
             text-align: center;
+
         }
         
         header h1 {
